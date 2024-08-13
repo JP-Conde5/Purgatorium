@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('satus');
+})->name('home');
+
+Route::get('/pecattum', function () {
     return view('pecattum');
-});
+})->name('pecados');
+
+

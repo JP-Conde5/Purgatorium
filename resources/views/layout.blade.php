@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +11,14 @@
 <body>
     <header>
         <div>
-            <img src="{assets['image/images.png']}" alt="">
             <h1>Purgatorium</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="#">Satus</a></li>
+                <li><a href="{{route('home')}}">Satus</a></li>
                 <li><a href="#">Mortalis</a></li>
                 <li><a href="#">Virtus</a></li>
-                <li><a href="#">Pecattum</a></li>
+                <li><a href="{{route('pecados')}}">Pecattum</a></li>
             </ul>
         </nav>
     </header>
