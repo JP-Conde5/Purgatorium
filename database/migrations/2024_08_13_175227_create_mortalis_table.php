@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('mortalis', function (Blueprint $table) {
             $table->id();
+            $table->string("nome");
+            $table->string("religiao");
+            $table->string("time");
+            
             $table->timestamps();
         });
     }

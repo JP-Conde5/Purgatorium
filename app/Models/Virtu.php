@@ -9,7 +9,7 @@ class Virtu extends Model
 {
     use HasFactory;
     protected $fillable=['nomeVirtus', 'descricao', 'karma'];
-    public function mortalisPecattum(){
-        return $this->hasMany('App\Models\MortalisVirtu');
+    public function mortalisVirtu(){
+        return $this->hasMany('App\Models\MortalisVirtu', 'id_virtu');
     }
 }
