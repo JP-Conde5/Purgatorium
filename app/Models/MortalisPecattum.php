@@ -9,11 +9,11 @@ class MortalisPecattum extends Model
 {
     
     use HasFactory;
-    protected $fillable = ['id'];
+    protected $fillable = ['idPecattum', 'idMortalis'];
     public function mortalis(){
         return $this->belongsTo('App\Models\Mortali');
     }
-    public function pecatuns(){
+    public function pecattums(){
         return $this->belongsTo('App\Models\Pecattum');
     }
 }

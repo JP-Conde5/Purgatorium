@@ -18,6 +18,7 @@ header{
     justify-content: space-between;
     background-color: black;
     background-image: linear-gradient(black, gray);
+    margin-bottom: 2rem
 }
 
 header div h1{
@@ -55,4 +56,12 @@ footer div{
 
 footer div p{
     font-size: 1.2rem;
+}
+
+/*Virtus*/
+.title{
+    text-align: center;
+    text-decoration: double;
+    font-size: larger;
+    font-weight: 700;
 }

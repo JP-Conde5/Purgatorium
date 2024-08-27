@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MortalisVirtu extends Model
 {
     use HasFactory;
-    protected $fillable = ['id'];
+    protected $fillable = ['idVitus', 'idMortalis'];
     public function mortalis(){
         return $this->belongsTo('App\Models\Mortali');
     }

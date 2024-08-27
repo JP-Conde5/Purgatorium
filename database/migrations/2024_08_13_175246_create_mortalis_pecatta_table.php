@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mortalis_pecatta', function (Blueprint $table) {
-            $table->id();
+        Schema::create('mortalisPecattums', function (Blueprint $table) {
+            $table->unsignedBigInteger('idMortalis');
+            $table->unsignedBigInteger('idPecattum');
+            $table->foreign('idMortalis')->references('id')->on('mortalis');
+            $table->foreign('idPecattum')->references('id')->on('pecattums');
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mortalis_pecatta');
+        Schema::dropIfExists('mortalisPecattums');
     }
 };

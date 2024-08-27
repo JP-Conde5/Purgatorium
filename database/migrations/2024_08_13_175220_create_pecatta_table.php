@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pecattum', function (Blueprint $table) {
-            $table->id();
-            $table->string('nomePecado');
+        Schema::create('pecattums', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nomePecattum');
             $table->string('descricao');
             $table->integer('karma');
             $table->timestamps();
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pecattum');
+        Schema::dropIfExists('pecattums');
     }
 };

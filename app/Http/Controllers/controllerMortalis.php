@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Mortali;
 
 class controllerMortalis extends Controller
 {
@@ -41,7 +42,7 @@ class controllerMortalis extends Controller
     $dados ->virtus = $request->input('Virtus');
     $dados ->Pecattum = $request->input('Pecattum');
     $dados ->save();
-     return redirect('/Baptismus')->with('sucess','Confissão realizada');
+     return redirect('/Editarmortalis')->with('sucess','Confissão realizada');
   }
     
     }

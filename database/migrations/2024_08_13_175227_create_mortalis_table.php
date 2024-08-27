@@ -12,11 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('mortalis', function (Blueprint $table) {
-            $table->id();
-            $table->string("nome");
+            $table->bigIncrements('id');
+            $table->string("nomeMortalis");
+            $table->string("dataMorte");
             $table->string("religiao");
             $table->string("time");
-            
+            $table->string("filosofo");
+            $table->string("pais");
+            $table->integer("karma");
+            $table->unsignedBigInteger("idDestination");
+            $table->foreign("idDestination")->references("id")->on("destinations");
             $table->timestamps();
         });
     }
