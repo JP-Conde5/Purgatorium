@@ -8,7 +8,7 @@
                 <h1 class="mt-5 text-center">CADASTRE UM NOVO MORTAL!!!!!!!!!!</h1>
             </div>
         </div>
-        <form action="{{route('@extends('layout')
+        <form action="{{route('@extends('layout')">
 @section('content')
 <div class="container py-4">
 <div class="card border">

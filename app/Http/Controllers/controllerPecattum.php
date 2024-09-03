@@ -18,7 +18,7 @@ class controllerPecattum extends Controller
 
     public function store(Request $request){
         $dados = new Pecattum();
-        $dados->nomePecado = $request->input('nomePecado');
+        $dados->nomePecattum = $request->input('nomePecattum');
         $dados->descricao = $request->input('descricao');
         $dados->karma = $request->input('karma');
         $dados->save();

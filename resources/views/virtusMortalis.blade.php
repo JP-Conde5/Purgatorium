@@ -1,15 +1,16 @@
 @extend('layout')
 @section('content')
 <h3 class="card-title">Mortalis - Virtus</h3>
-<form action="">
-    
-    <label for="virtude">Cadatre mais alguma virtude: </label>
-    <select name="virtude">
-        @foreach($virtudes as $item)
-        <option value="{{$vitude->id}}">$virtudes->nomeVirtus</option>
-        @endforeach
-        <button class="btn btn-dark" type="submit">Testemunhar</button>
-    </select>
+<form action="{{route('virtusMortalis')}}">
+    <div class="form-group">
+        <label for="virtude">Cadatre mais alguma virtude: </label>
+        <select name="virtude">
+            @foreach($virtudes as $item)
+            <option value="{{$vitude->id}}">$virtudes->nomeVirtus</option>
+            @endforeach
+            <button class="btn btn-dark" type="submit">Testemunhar</button>
+        </select>
+    </div>
 </form>
         <table class="table table-striped table-dark">
             <thead>

@@ -5,21 +5,18 @@
     <div class="card-body">
         <div class="jumbotron">
             <div class="container">
-                <h1 class="mt-5 text-center">ATUALIZE OS DADOS DO PECADO</h1>
+                <h1 class="mt-5 text-center">Cadastrar Pecado</h1>
             </div>
         </div>
-        <form action="/pais/{{$dados->id}}" method="POST">
+        <form action="{{route('salvarPecattum')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" name="nome" 
-                       value="{{$dados->NomePecattum}}">
+                <input type="text" class="form-control" name="nomePecattum">
                 <label for="nome">Descrição:</label>
-                <input type="text" class="form-control" name="descrição" 
-                       value="{{$dados->descricao}}">
+                <input type="text" class="form-control" name="descricao">
                 <label for="nome">Karma:</label>
-                <input type="text" class="form-control" name="karma" 
-                       value="{{$dados->karma}}">
+                <input type="text" class="form-control" name="karma">
             </div>
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>
             <button onclick="window.location.href='{{route('home')}}';" type="button" 
@@ -28,4 +25,4 @@
     </div> 
 </div> 
 </div>
-@endsection
+@endsection 

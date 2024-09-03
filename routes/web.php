@@ -35,9 +35,9 @@ Route::post('/atualizarVirtus/{id}', [App\Http\Controllers\controllerVirtus::cla
 Route::get('/deletarVirtus/{id}', [App\Http\Controllers\controllerVirtus::class, 'destroy'])->name('deletarVirtus');
 
 //Pecattum
-Route::get('/exibirpecattum', [App\Http\Controllers\controllerPecattum::class, 'index'])->name('exibirPecattum');
+Route::get('/exibirPecattum', [App\Http\Controllers\controllerPecattum::class, 'index'])->name('exibirPecattum');
 Route::get('/criarPecattum', [App\Http\Controllers\controllerPecattum::class, 'create'])->name('criarPecattum');
-Route::post('/salvaPecattum', [App\Http\Controllers\controllerPecattum::class, 'store'])->name('salvarPeccattum');
+Route::post('/salvaPecattum', [App\Http\Controllers\controllerPecattum::class, 'store'])->name('salvarPecattum');
 Route::get('/editarPecattum{id}', [App\Http\Controllers\controllerPecattum::class, 'edit'])->name('editarPecattum');
 Route::post('atualizarPecattum/{id}', [App\Http\Controllers\controllerPecattum::class, 'update'])->name('atualizarPecattum');
 Route::get('deletarPecattum/{id}', [App\Http\Controllers\controllerPecattum::class, 'destroy'])->name('deletarPecattum');
