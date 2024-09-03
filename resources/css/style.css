@@ -59,9 +59,30 @@ footer div p{
 }
 
 /*Virtus*/
-.title{
+.card-title{
     text-align: center;
     text-decoration: double;
-    font-size: larger;
-    font-weight: 700;
+    font-size: xx-large;
+    font-weight: 400;
+    margin: 2rem;
+}
+
+.secao{
+    margin-top: 2rem
+}
+
+.title-button{
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.btn{
+    font-size: large;
+}
+
+.table{
+    font-size: large;
+    margin-bottom: 2rem;
 }

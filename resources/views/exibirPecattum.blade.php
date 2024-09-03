@@ -7,13 +7,13 @@
         </div><br/>
     @elseif(session()->get('success'))
         <div class="alert alert-success">
-            {{session()-get('success')}}
+            {{session()->get('success')}}
         </div>
     @endif
 </div>
 <div class="title-button">
-    <h3 class="card-title">Virtus</h3>
-    <a href="{{route('criarVirtus')}}" type="button" class="btn btn-dark" style="backgroundcolor:'gray'">Cadastrar virtudes</a>
+    <h3 class="card-title">Pecados</h5>
+    <a href="{{route('criarPecattum')}}" type="button" class="btn btn-dark" style="backgroundcolor:'gray'">Cadastrar pecados</a>
 </div>
     <div class="secao">
         <table class="table table-striped table-dark">
@@ -30,14 +30,14 @@
                 @foreach ($dados as $item)
                 <tr>
                     <td>{{ $item->id  }}</td>
-                    <td>{{ $item->nomeVirtus }}</td>
+                    <td>{{ $item->nomePeccatum }}</td>
                     <td>{{ $item->descricao }}</td>
                     <td>{{ $item->karma }}</td>
                     <td style="text-align:center">
-                        <a class="btn btn-dark" href="/editarVirtus/{{$item['id']}}">Editar</a>
+                        <a class="btn btn-dark" href="/editarPecattum/{{$item['id']}}">Editar</a>
                     </td>
                     <td style="text-align:center">
-                        <a class="btn btn-danger" href="/deleterVirtus/{{$item['id']}}" onclick="return confirm('Tem certeza que deseja remover?');">Deletar</a>       
+                        <a class="btn btn-danger" href="/deleterPecattum/{{$item['id']}}" onclick="return confirm('Tem certeza que deseja remover?');">Deletar</a>       
                     </td>
                 </tr>
                 @endforeach

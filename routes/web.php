@@ -16,11 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('satus');
 })->name('home');
-//Mortalis
 
-Route::get('/exibirMortalis', [App\Http\Controllers\controllerVirtus::class, 'index'])->name('exibirMortalis');
-Route::post('/Criarmortalis', [App\Http\Controllers\AutoresController::class, 'store'])->name('gravaNovoMortalis');
-Route::get('/Editarmortalis{id}', [App\Http\Controllers\AutoresController::class, 'edit'])->name('editarMortalis');
+//Mortalis
+Route::get('/exibirMortalis', [App\Http\Controllers\controllerMortalis::class, 'index'])->name('exibirMortalis');
+Route::get('/pecattumMortalis/{id}', [App\Http\Controllers\controllerMortalis::class, 'pecattum'])->name('pecattumMortalis');
+Route::post('/criarMortalis', [App\Http\Controllers\controllerMortalis::class, 'store'])->name('salvarMortalis');
+Route::post('/salvarMortalis', [App\Http\Controllers\controllerMortalis::class, 'store'])->name('salvarMortalis');
+Route::get('/editarMortalis/{id}', [App\Http\Controllers\controllerMortalis::class, 'edit'])->name('editarMortalis');
+Route::post('/atualizarMortalis/{id}', [App\Http\Controllers\controllerMortalis::class, 'update'])->name('atualizarMortalis');
+Route::get('/deletarMortalis/{id}', [App\Http\Controllers\controllerMortalis::class, 'destroy'])->name('deletarMortalis');
 
 //Virtus
 Route::get('/exibirVirtus', [App\Http\Controllers\controllerVirtus::class, 'index'])->name('exibirVirtus');
@@ -29,8 +33,14 @@ Route::post('/salvarVirtus', [App\Http\Controllers\controllerVirtus::class, 'sto
 Route::get('/editarVirtus/{id}', [App\Http\Controllers\controllerVirtus::class, 'edit'])->name('editarVirtus');
 Route::post('/atualizarVirtus/{id}', [App\Http\Controllers\controllerVirtus::class, 'update'])->name('atualizarVirtus');
 Route::get('/deletarVirtus/{id}', [App\Http\Controllers\controllerVirtus::class, 'destroy'])->name('deletarVirtus');
+
 //Pecattum
-Route::get('/pecattum', [App\Http\Controllers\controllerPecattum::class, 'index'])->name('pecattum');
-Route::post('/pecattum', [App\Http\Controllers\AutoresController::class, 'store'])->name('gravaNovoPecado');
+Route::get('/exibirpecattum', [App\Http\Controllers\controllerPecattum::class, 'index'])->name('exibirPecattum');
+Route::get('/criarPecattum', [App\Http\Controllers\controllerPecattum::class, 'create'])->name('criarPecattum');
+Route::post('/salvaPecattum', [App\Http\Controllers\controllerPecattum::class, 'store'])->name('salvarPeccattum');
+Route::get('/editarPecattum{id}', [App\Http\Controllers\controllerPecattum::class, 'edit'])->name('editarPecattum');
+Route::post('atualizarPecattum/{id}', [App\Http\Controllers\controllerPecattum::class, 'update'])->name('atualizarPecattum');
+Route::get('deletarPecattum/{id}', [App\Http\Controllers\controllerPecattum::class, 'destroy'])->name('deletarPecattum');
 
-
+//VirtusMortalis
+Route::get('/vitusMortalis/{id}', [App\Http\Controllers\controllerMortalis::class, 'virtus'])->name('virtusMortalis');

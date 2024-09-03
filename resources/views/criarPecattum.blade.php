@@ -5,7 +5,7 @@
     <div class="card-body">
         <div class="jumbotron">
             <div class="container">
-                <h1 class="mt-5 text-center">ATUALIZE OS DADOS DO PECATTUM</h1>
+                <h1 class="mt-5 text-center">ATUALIZE OS DADOS DO PECADO</h1>
             </div>
         </div>
         <form action="/pais/{{$dados->id}}" method="POST">

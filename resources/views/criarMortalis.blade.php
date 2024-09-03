@@ -22,23 +22,29 @@
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" name="nome" 
-                       placeholder="Informe o nome do autor">
-                <label for="nome">Filosofo preferido(Não pode ser Sartre):</label>
+                <input type="text" class="form-control" name="nome"
+                        placeholder="Informe seu nome">
+            </div>
+            <div>
+                <label for="filosofo">Filosofo preferido(Não pode ser Sartre):</label>
                 <input type="text" class="form-control" name="filosofo" 
                        placeholder="Informe o nome do filósofo">
-                <label for="nome">Time preferido:</label>
-                <input type="text" class="form-control" name="timePreferido" 
-                       placeholder="Informe o nome do time favorito">
-                <label for="nome">Nacionalidade:</label>
-                <input type="text" class="form-control" name="Nacionalidade" 
-                placeholder="Informe a nacionalidade do humano">
-                <label for="nome">Religiao:</label>
-                <input type="text" class="form-control" name="religiao" 
-                placeholder="Informe a religiao">
             </div>
-            <hr>
-            <hr>
+            <div>
+                <label for="time">Time preferido:</label>
+                <input type="text" class="form-control" name="time" 
+                       placeholder="Informe o nome do time favorito">
+            </div>
+            <div>
+                <label for="nacionalidade">Nacionalidade:</label>
+                <input type="text" class="form-control" name="nacionalidade" 
+                        placeholder="Informe a nacionalidade do humano">
+            </div>
+            <div>    
+                <label for="religiao">Religiao:</label>
+                <input type="text" class="form-control" name="religiao" 
+                        placeholder="Informe a religiao">
+            </div>
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>
             <button onclick="window.location.href='{{route('home')}}';" type="button" 
                     class="btn btn-outline-danger btn-sm">Cancelar</button>

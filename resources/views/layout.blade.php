@@ -19,11 +19,11 @@
                 <li><a href="{{route('home')}}">Satus</a></li>
                 <li><a href="{{route('exibirMortalis')}}">Mortalis</a></li>
                 <li><a href="{{route('exibirVirtus')}}">Virtus</a></li>
-                <li><a href="#">Pecattum</a></li>
+                <li><a href="{{route('exibirPecattum')}}">Pecattum</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="container-fluid">
         @hasSection('content')
             @yield('content')
         @endif
