@@ -3,24 +3,22 @@
 <div class="container py-4">
 <div class="card border">
     <div class="card-body">
-        <div class="jumbotron">
-            <div class="container">
-                <h1 class="mt-5 text-center">Cadastrar Pecado</h1>
-            </div>
+        <div class="container">
+            <h1 style="color: black" class="mt-5 text-center">Cadastrar Pecado</h1>
         </div>
         <form action="{{route('salvarPecattum')}}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="nome">Nome:</label>
+                <label for="nomePecattum">Nome:</label>
                 <input type="text" class="form-control" name="nomePecattum">
-                <label for="nome">Descrição:</label>
+                <label for="descricao">Descrição:</label>
                 <input type="text" class="form-control" name="descricao">
-                <label for="nome">Karma:</label>
-                <input type="text" class="form-control" name="karma">
+                <label for="karma">Karma:</label>
+                <input class="form-control-range" name="karma" type="range">
             </div>
-            <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>
-            <button onclick="window.location.href='{{route('home')}}';" type="button" 
-                    class="btn btn-outline-danger btn-sm">Cancelar</button>
+            <button type="submit" class="btn btn-dark">Salvar</button>
+            <button onclick="window.location.href='{{route('home')}}'" type="button" 
+                    class="btn btn-danger">Cancelar</button>
         </form>
     </div> 
 </div> 

@@ -18,7 +18,8 @@ header{
     justify-content: space-between;
     background-color: black;
     background-image: linear-gradient(black, gray);
-    margin-bottom: 2rem
+    margin-bottom: 2rem;
+    height: 5rem;
 }
 
 header div h1{
@@ -48,6 +49,7 @@ footer{
     position: absolute;
     bottom: 0;
     width: 100%;
+    height: 2rem;
 }
 
 footer div{
@@ -90,3 +92,29 @@ footer div p{
 input{
     color: black
 }
+
+label{
+    color: black
+}
+
+/*div.buttons{
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container{
+    align-items: center;
+}
+
+.card-body{
+    background-color: "#666666";
+}
+
+.card{
+    background-color: "#666666";
+}
+
+.border{
+    background-color: "#666666";
+}*/

@@ -7,13 +7,13 @@
         </div><br/>
     @elseif(session()->get('success'))
         <div class="alert alert-success">
-            {{session()->get('success')}}
+            {{session()-get('success')}}
         </div>
     @endif
 </div>
 <div class="title-button">
-    <h3 class="card-title">Pecados</h5>
-    <a href="{{route('criarPecattum')}}" type="button" class="btn btn-dark" style="backgroundcolor:'gray'">Cadastrar pecados</a>
+    <h3 class="card-title">Pecattums de {{$dados->nome}}</h3>
+    <a href="{{route('criarMortalisVirtus')}}" type="button" class="btn btn-dark" style="backgroundcolor:'gray'">Vincular pecados</a>
 </div>
     <div class="secao">
         <table class="table table-striped table-dark">
@@ -21,9 +21,8 @@
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>Descrição</th>
                     <th>Karma</th>
-                    <th style="text-align:center" colspan="2">Ações</th>
+                    <th style="text-align:center">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,13 +30,9 @@
                 <tr>
                     <td>{{ $item->id  }}</td>
                     <td>{{ $item->nomePecattum }}</td>
-                    <td>{{ $item->descricao }}</td>
-                    <td>{{ $item->karma }}</td>
+                    <td>-{{ $item->karma }}</td>
                     <td style="text-align:center">
-                        <a class="btn btn-dark" href="/editarPecattum/{{$item['id']}}">Editar</a>
-                    </td>
-                    <td style="text-align:center">
-                        <a class="btn btn-danger" href="/deletarPecattum/{{$item['id']}}" onclick="return confirm('Tem certeza que deseja remover?');">Deletar</a>       
+                        <a class="btn btn-danger" href="/deletarVirtus/{{$item['id']}}" onclick="return confirm('Tem certeza que deseja remover?');">Perdoar</a>       
                     </td>
                 </tr>
                 @endforeach

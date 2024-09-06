@@ -4,15 +4,15 @@
     <div class="card-body">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container-fluid">
-                    <h1 class="mt-5 text-center">ATUALIZE OS DADOS DO PECADO</h1>
+                    <h1 class="mt-5 text-center">ATUALIZE OS DADOS DO PECADO DESEJADO DESEJADO</h1>
                 </div>
             </div>
-            <form action="/{ziguiriguidum}}" method="POST">
+            <form action="{{ route('atualizarPecattum', ['id' => $dados->id])}}" method="post">
                 @csrf
                 <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" class="form-control" name="nome" 
-                        value="{{$dados->NomePecattum}}">
+                    <label for="nomePecattum">Nome:</label>
+                    <input type="text" class="form-control" name="nomePecattum" 
+                        value="{{$dados->nomePecattum}}">
                 </div>
                 <div class="form-group">
                     <label for="nome">Descrição:</label>

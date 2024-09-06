@@ -8,17 +8,7 @@
                 <h1 class="mt-5 text-center">CADASTRE UM NOVO MORTAL!!!!!!!!!!</h1>
             </div>
         </div>
-        <form action="{{route('@extends('layout')">
-@section('content')
-<div class="container py-4">
-<div class="card border">
-    <div class="card-body">
-        <div class="jumbotron">
-            <div class="container">
-                <h1 class="mt-5 text-center">CADASTRE UM NOVO MORTAL!!!!!!!!!!</h1>
-            </div>
-        </div>
-        <form action="{{route('gravaNovoMortalis')}}" method="POST">
+        <form action="{{route('salvarMortalis')}}" method="post">
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>

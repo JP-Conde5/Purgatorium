@@ -1,16 +1,6 @@
 @extends('layout')
 @section('content')
-<div class="card border">
-    @if(session()->get('danger'))
-        <div class="alert alert-danger">
-            {{session()->get('danger')}}
-        </div><br/>
-    @elseif(session()->get('success'))
-        <div class="alert alert-success">
-            {{session()-get('success')}}
-        </div>
-    @endif
-</div>
+
 <div class="title-button">
     <h3 class="card-title">Virtus</h3>
     <a href="{{route('criarVirtus')}}" type="button" class="btn btn-dark" style="backgroundcolor:'gray'">Cadastrar virtudes</a>
@@ -37,7 +27,7 @@
                         <a class="btn btn-dark" href="/editarVirtus/{{$item['id']}}">Editar</a>
                     </td>
                     <td style="text-align:center">
-                        <a class="btn btn-danger" href="/deleterVirtus/{{$item['id']}}" onclick="return confirm('Tem certeza que deseja remover?');">Deletar</a>       
+                        <a class="btn btn-danger" href="/deletarVirtus/{{$item['id']}}" onclick="return confirm('Tem certeza que deseja remover?');">Deletar</a>       
                     </td>
                 </tr>
                 @endforeach

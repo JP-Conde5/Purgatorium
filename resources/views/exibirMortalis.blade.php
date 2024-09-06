@@ -11,15 +11,22 @@
         </div>
     @endif
 </div>
-<h5 class="card-title" style="text-align: center">Virtudes</h5>
-    <a href="formcadpecattum" type="button" class="btn btn-primary" style="backgroundcolor:'gray'" >Cadastrar humano</a>
-    <table>
+<div class="title-button">
+    <h5 class="card-title" style="text-align: center">Mortais</h5>
+    <a href="{{route('criarMortalis')}}" type="button" class="btn btn-dark">Cadastrar Mortal</a>
+</div>
+    <table class="table table-striped table-dark">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Descrição</th>
+                <th>Data de Morte</th>
+                <th>Religião</th>
+                <th>Time do Coração</th>
+                <th>Filósofo Preferido</th>
+                <th>Nacionalidade</th>
                 <th>Karma</th>
+                <th>Destino</th>
                 <th style="text-align:center" colspan="4">Ações</th>
             </tr>
         </thead>
@@ -34,18 +41,19 @@
                 <td>{{ $item->religiao }}</td>
                 <td>{{ $item->karma }}</td>
                 <td>
-                    <a href="/virtusMortalis/{{$item['id']}}">Virtudes</a>
+                    <a href="/exibirMortalisVirtus/{{$item['id']}}">Virtudes</a>
                 </td>
                 <td>
-                    <a href="/pecattumMortalis/{{$item['id']}}">Pecados</a>
+                    <a href="/exibirMortalisPecattum/{{$item['id']}}">Pecados</a>
                 </td>
                 <td style="text-align:center">
                     <a href="/editarMortalis/{{$item['id']}}">Editar</a>
                 </td>
                 <td style="text-align:center">
-                    <a href="/delete/{{$item['id']}}" onclick="return confirm('Tem certeza que deseja remover?');">Deletar</a>       
+                    <a href="/deletarMortalis/{{$item['id']}}" onclick="return confirm('Tem certeza que deseja remover?');">Deletar</a>       
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>    
+@endsection

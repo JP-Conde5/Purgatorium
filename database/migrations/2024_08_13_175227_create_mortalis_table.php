@@ -18,10 +18,13 @@ return new class extends Migration
             $table->string("religiao");
             $table->string("time");
             $table->string("filosofo");
-            $table->string("pais");
+            $table->string("nacionalidade");
             $table->integer("karma");
-            $table->unsignedBigInteger("idDestination");
-            $table->foreign("idDestination")->references("id")->on("destinations");
+            $table->string("destination");
+            /*$table->unsignedBigInteger("idVirtus");
+            $table->unsignedBigInteger("idPecattum");
+            $table->foreign("idVirtus")->references("id")->on("mortalis_virtus");
+            $table->foreign("idPecattum")->references("id")->on("mortalis_pecattums");*/
             $table->timestamps();
         });
     }

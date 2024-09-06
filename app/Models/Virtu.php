@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Virtu extends Model
 {
     use HasFactory;
+    protected $table = "virtus";
     protected $fillable=['nomeVirtus', 'descricao', 'karma'];
     public function mortalisVirtus(){
         return $this->hasMany('App\Models\MortalisVirtu', 'idVirtus');

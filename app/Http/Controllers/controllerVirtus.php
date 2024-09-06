@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Virtu;
+use App\Models\MortalisVirtu;
 
 class controllerVirtus extends Controller
 {
@@ -29,21 +30,23 @@ class controllerVirtus extends Controller
             return view('editarVirtus', compact('dados'));
         return redirect('/exibirVirtus')->with('danger', 'Esta virtude não existe');
     }
-    public function update(string $id, Request $request){
+    public function update(Request $request, $id){
         $dados = Virtu::find($id);
-        if(isset($dados))
+        if(isset($dados)){
             $dados->nomeVirtus = $request->input('nomeVirtus');
             $dados->descricao = $request->input('descricao');
             $dados->karma = $request->input('karma');
-        if($dados->save())
-            return redirect('/exibirVirtus')->with('sucess', '"Amai os outros como a ti mesmo" - Manoel Gomes');
-        return redirect('/exibirVirtus')->with('danger', 'Erro ao atualizar virtude...'); 
+            $dados->save();
+            return redirect('/exibirVirtus')->with('success', 'Virtude atualizado com sucesso');
+        }
+        return redirect('/exibirVirtus')->with('danger', 'Erro ao tentar atualizar virtude');
     }
+
     public function destroy(string $id){
         $dados = Virtu::find($id);
         if(isset($dados)){
             //Tem algum mortal com essa virtude?
-            $mortalis = Virtu::where('idVirtus', '=', $id)->first();
+            $mortalis = MortalisVirtu::where('idVirtus', '=', $id)->first();
             if(!isset($mortalis)){
                 $dados->delete();
                 return redirect('/exibirVirtus')->with('sucess', '"Na natureza nada se cria, nada se perde, tudo se transforma" - Supla');
