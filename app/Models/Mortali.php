@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mortali extends Model
 {
     use HasFactory;
-    protected $fillable =["nomeMortalis", "dataMorte", "filosofo", "time", "nacionalidade", "religiao", "karma", "destination"];
+    protected $fillable =["nomeMortalis", "anoMorte", "filosofo", "time", "nacionalidade", "religiao", "karma", "destination"];
     public function pecattums(){
         return $this->hasMany('App\Models\MortalisPecattum', 'idPecattum');
     }

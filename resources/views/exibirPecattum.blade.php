@@ -12,8 +12,8 @@
     @endif
 </div>
 <div class="title-button">
-    <h3 class="card-title">Pecados</h5>
-    <a href="{{route('criarPecattum')}}" type="button" class="btn btn-dark" style="backgroundcolor:'gray'">Cadastrar pecados</a>
+    <h3 class="card-title">Pecados</h3>
+    <a href="{{route('criarPecattum')}}" type="button" class="btn btn-dark">Cadastrar pecados</a>
 </div>
     <div class="secao">
         <table class="table table-striped table-dark">
@@ -32,7 +32,7 @@
                     <td>{{ $item->id  }}</td>
                     <td>{{ $item->nomePecattum }}</td>
                     <td>{{ $item->descricao }}</td>
-                    <td>{{ $item->karma }}</td>
+                    <td>-{{ $item->karma }}</td>
                     <td style="text-align:center">
                         <a class="btn btn-dark" href="/editarPecattum/{{$item['id']}}">Editar</a>
                     </td>

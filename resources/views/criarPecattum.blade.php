@@ -11,14 +11,23 @@
             <div class="form-group">
                 <label for="nomePecattum">Nome:</label>
                 <input type="text" class="form-control" name="nomePecattum">
+            </div> 
+            <br>
+            <div class="form-group">   
                 <label for="descricao">Descrição:</label>
                 <input type="text" class="form-control" name="descricao">
+            </div>
+            <br>
+            <div class="form-group">
                 <label for="karma">Karma:</label>
                 <input class="form-control-range" name="karma" type="range">
             </div>
-            <button type="submit" class="btn btn-dark">Salvar</button>
-            <button onclick="window.location.href='{{route('home')}}'" type="button" 
+            <br>
+            <div class="buttons">
+                <button type="submit" class="btn btn-dark">Salvar</button>
+                <button onclick="window.location.href='{{route('home')}}'" type="button" 
                     class="btn btn-danger">Cancelar</button>
+            </div>
         </form>
     </div> 
 </div> 

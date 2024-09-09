@@ -6,8 +6,7 @@
         <div class="container">
             <h1 class="mt-5 text-center" style="color: black">Virtus</h1>
         </div>
-        <form 
-         action="{{route('salvarVirtus')}}">
+        <form action="{{route('salvarVirtus')}}" method="post">
             @csrf
             <div class="form-group">
                 <label for="nome">Nome: </label>

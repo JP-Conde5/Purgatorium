@@ -12,7 +12,7 @@ class controllerMortalisPecattum extends Controller
 {
     private $MortalisPecattum;
 
-    public function __construct(MortalisPecattum $item){
+    public function __construct(MortalisVirtu $item){
         $this->MortalisPecattum = $item;
     }
 
@@ -20,12 +20,15 @@ class controllerMortalisPecattum extends Controller
     {
         $dados = $this->MortalisPecattum->where('idMortalis', $id)->get();
         $mortalis = Mortali::find($id);
-        $dados->nome = $mortalis->nome;
+        $dados->idMortalis = $id;
+        $dados->nomeMortalis = $mortalis->nomeMortalis;
         foreach($dados as $item){
-            $mortalis = Pecattum::find($item->idPecattum);
-            $item->nome = $mortalis->nome;
+            $pecattum = Pecattum::find($item->idPecattum);
+            $item->nomePecattum = $pecattums->nomePecattum;
+            $item->karma = $pecattum->karma;
         }
-        return view('exibirDetalhesMortalis', compact('dados'));
+        $pecattum = Pecattum::all();
+        return view('exibirMortalisPecattum', compact('dados','pecattum'));
     }
 
     public function store(Request $request)
@@ -34,8 +37,8 @@ class controllerMortalisPecattum extends Controller
         $dados->idMortalis = $request->input('idMortalis');
         $dados->idPecattum = $request->input('idPecattum');
         if($dados->save())
-            return redirect('/livro')->with('success', 'A queda do Sol já se reserva para alguns');
-        return redirect('/livro')->with('danger', 'Erro: Não esqueça, calúnia também é pecado');
+            return redirect('/exibirMortalis')->with('success', 'A maculação está em todos os mortais');
+        return redirect('/exibirMortalis')->with('danger', 'Erro: Lembre-se - calúnia também é um pecado');
     }
 
     public function destroy(string $id)
@@ -43,8 +46,8 @@ class controllerMortalisPecattum extends Controller
         $dados = MortalisPecattum::find($id);
         if(isset($dados)){
             $dados->delete();
-            return redirect('/livro')->with('success', 'O perdão é uma das maiores virtudes');
+            return redirect('/exibirMortalis')->with('success', 'O perdão é algo a ser praticado em todas as realidades da vida');
         }
-        return redirect('/livro')->with('danger', 'Erro: O perdão sem fronteiras é para os passivos, não pacifistas');
+        return redirect('/exibirMortalis')->with('danger', 'Erro: Não facilite muito, pois pode ser um erro');
     }
 }

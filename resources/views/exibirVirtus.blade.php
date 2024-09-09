@@ -1,8 +1,18 @@
 @extends('layout')
 @section('content')
-
+<div class="card border">
+    @if(session()->get('danger'))
+        <div class="alert alert-danger">
+            {{session()->get('danger')}}
+        </div><br/>
+    @elseif(session()->get('success'))
+        <div class="alert alert-success">
+            {{session()->get('success')}}
+        </div>
+    @endif
+</div>
 <div class="title-button">
-    <h3 class="card-title">Virtus</h3>
+    <h3 class="card-title">Virtudes</h3>
     <a href="{{route('criarVirtus')}}" type="button" class="btn btn-dark" style="backgroundcolor:'gray'">Cadastrar virtudes</a>
 </div>
     <div class="secao">

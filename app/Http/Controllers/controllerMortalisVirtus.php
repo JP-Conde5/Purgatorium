@@ -19,13 +19,16 @@ class controllerMortalisVirtus extends Controller
     public function index($id)
     {
         $dados = $this->MortalisVirtu->where('idMortalis', $id)->get();
-        $virtus = Mortali::find($id);
-        $dados->nome = $virtus->nome;
+        $mortalis = Mortali::find($id);
+        $dados->idMortalis = $id;
+        $dados->nomeMortalis = $mortalis->nomeMortalis;
         foreach($dados as $item){
             $virtus = Virtu::find($item->idVirtus);
-            $item->nome = $virtus->Nome;
+            $item->nomeVirtus = $virtus->nomeVirtus;
+            $item->karma = $virtus->karma;
         }
-        return view('exibirMortalisVirtus', compact('dados'));
+        $virtus = Virtu::all();
+        return view('exibirMortalisVirtus', compact('dados','virtus'));
     }
 
     public function store(Request $request)
@@ -34,8 +37,8 @@ class controllerMortalisVirtus extends Controller
         $dados->idMortalis = $request->input('idMortalis');
         $dados->idVirtus = $request->input('idVirtus');
         if($dados->save())
-            return redirect('/exibirMortalisVirtus')->with('success', 'A honra se encontra naqueles que são justos');
-        return redirect('/exibirMortalisVirtus')->with('danger', 'Erro: Talvez não seja digno de tamanha virtude');
+            return redirect('/exibirMortalis')->with('success', 'A honra se encontra naqueles que são justos');
+        return redirect('/exibirMortalis')->with('danger', 'Erro: Talvez não seja digno de tamanha virtude');
     }
 
     public function destroy(string $id)
@@ -43,8 +46,8 @@ class controllerMortalisVirtus extends Controller
         $dados = MortalisVirtu::find($id);
         if(isset($dados)){
             $dados->delete();
-            return redirect('/exibirMortalisVirtus')->with('success', 'A ruína está na perda de suas caracteríscas de bondade infantil');
+            return redirect('/exibirMortalis')->with('success', 'A ruína está na perda de suas caracteríscas de bondade infantil');
         }
-        return redirect('/exibirMortalisVirtus')->with('danger', 'Erro: Não tire essa beleza dele');
+        return redirect('/exibirMortalis')->with('danger', 'Erro: Não tire essa beleza dele');
     }
 }

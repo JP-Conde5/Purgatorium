@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('mortalis', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string("nomeMortalis");
-            $table->string("dataMorte");
+            $table->string("anoMorte");
             $table->string("religiao");
             $table->string("time");
             $table->string("filosofo");

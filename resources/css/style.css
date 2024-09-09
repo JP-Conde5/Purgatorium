@@ -74,7 +74,9 @@ footer div p{
 }
 
 .title-button{
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
     width: 100%;
@@ -89,12 +91,27 @@ footer div p{
     margin-bottom: 2rem;
 }
 
+.insert{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20rem;
+    color: black;
+}
+
 input{
     color: black
 }
 
 label{
     color: black
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
 }
 
 /*div.buttons{
