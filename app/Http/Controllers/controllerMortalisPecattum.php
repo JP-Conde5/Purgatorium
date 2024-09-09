@@ -12,7 +12,7 @@ class controllerMortalisPecattum extends Controller
 {
     private $MortalisPecattum;
 
-    public function __construct(MortalisVirtu $item){
+    public function __construct(MortalisPecattum $item){
         $this->MortalisPecattum = $item;
     }
 
@@ -24,7 +24,7 @@ class controllerMortalisPecattum extends Controller
         $dados->nomeMortalis = $mortalis->nomeMortalis;
         foreach($dados as $item){
             $pecattum = Pecattum::find($item->idPecattum);
-            $item->nomePecattum = $pecattums->nomePecattum;
+            $item->nomePecattum = $pecattum->nomePecattum;
             $item->karma = $pecattum->karma;
         }
         $pecattum = Pecattum::all();
