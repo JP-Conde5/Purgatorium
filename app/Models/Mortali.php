@@ -15,4 +15,14 @@ class Mortali extends Model
     public function virtus(){
         return $this->hasMany('App\Models\MortalisVirtu', 'idVirtus');
     }
+    public function julgamento(){
+        if($this->karma > 0){
+            $this->destination = "Paraíso";
+        }else if($this->karma < 0){
+            $this->destination = "Inferno";
+        }else{
+            $this->destination = "Purgatório";
+        }
+        $this->save();
+    }
 }

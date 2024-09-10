@@ -36,6 +36,11 @@ class controllerMortalisPecattum extends Controller
         $dados = new MortalisPecattum();
         $dados->idMortalis = $request->input('idMortalis');
         $dados->idPecattum = $request->input('idPecattum');
+        $mortalis = Mortali::find($request->input('idMortalis'));
+        $pecattum = pecattum::find($request->input('idPecattum'));
+        $mortalis->karma -= $pecattum->karma;
+        $mortalis->save();
+        $mortalis->julgamento();
         if($dados->save())
             return redirect('/exibirMortalis')->with('success', 'A maculação está em todos os mortais');
         return redirect('/exibirMortalis')->with('danger', 'Erro: Lembre-se - calúnia também é um pecado');
@@ -44,6 +49,11 @@ class controllerMortalisPecattum extends Controller
     public function destroy(string $id)
     {
         $dados = MortalisPecattum::find($id);
+        $mortalis = Mortali::find($dados->idMortalis);
+        $pecattum = Pecattum::find($dados->idPecattum);
+        $mortalis->karma += $pecattum->karma;
+        $mortalis->save();
+        $mortalis->julgamento();
         if(isset($dados)){
             $dados->delete();
             return redirect('/exibirMortalis')->with('success', 'O perdão é algo a ser praticado em todas as realidades da vida');

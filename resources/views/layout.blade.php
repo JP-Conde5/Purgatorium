@@ -10,8 +10,7 @@
 
 <body>
     <header>
-        <div style="display:flex">
-        <img src="{{asset('storage/imagens/logo.png')}}">
+        <div style="display:flex; margin-left: 2rem; margin-top: 0.5rem">
             <h1>Purgatorium</h1>  
         </div>
         <nav>

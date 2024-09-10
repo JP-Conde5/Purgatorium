@@ -23,8 +23,8 @@
                     <th>Nome</th>
                     <th>Ano de Morte</th>
                     <th>Religião</th>
-                    <th>Time do Coração</th>
                     <th>Filósofo Preferido</th>
+                    <th>Time do Coração</th>
                     <th>Nacionalidade</th>
                     <th>Karma</th>
                     <th>Destino</th>

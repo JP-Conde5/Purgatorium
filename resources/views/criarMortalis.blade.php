@@ -10,38 +10,33 @@
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" name="nome"
-                        placeholder="Informe seu nome">
+                <input type="text" class="form-control" name="nome">
             </div>
             <br>
             <div class="form-group">
                 <label for="anoMorte">Ano de Morte:</label>
-                <input type="text" class="form-control" name="anoMorte"
-                    placeholder="Informe seu nome">
+                <input type="text" class="form-control" name="anoMorte">
             </div>
             <br>
             <div>
                 <label for="filosofo">Filosofo preferido(Não pode ser Sartre):</label>
-                <input type="text" class="form-control" name="filosofo" 
-                       placeholder="Informe o nome do filósofo">
+                <input type="text" class="form-control" name="filosofo">
             </div>
             <br>
             <div>
-                <label for="time">Time preferido:</label>
+                <label for="time">Time do coração:</label>
                 <input type="text" class="form-control" name="time" 
-                       placeholder="Informe o nome do time favorito">
+                       placeholder="São Paulo">
             </div>
             <br>
             <div>
                 <label for="nacionalidade">Nacionalidade:</label>
-                <input type="text" class="form-control" name="nacionalidade" 
-                        placeholder="Informe a nacionalidade do humano">
+                <input type="text" class="form-control" name="nacionalidade">
             </div>
             <br>
             <div>    
                 <label for="religiao">Religiao:</label>
-                <input type="text" class="form-control" name="religiao" 
-                        placeholder="Informe a religiao">
+                <input type="text" class="form-control" name="religiao">
             </div>
             <br>
             <div class="buttons">

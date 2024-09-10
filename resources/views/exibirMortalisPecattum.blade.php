@@ -24,7 +24,7 @@
                 @endforeach
              </select>
         </div>
-        <button type="submit" class="btn btn-dark">Vincular virtudes</a>
+        <button type="submit" class="btn btn-dark">Vincular pecados</a>
         </form>
     </div>
 </div>
@@ -44,7 +44,7 @@
                 <tr>
                     <td>{{ $item->idPecattum  }}</td>
                     <td>{{ $item->nomePecattum }}</td>
-                    <td>{{ $item->karma }}</td>
+                    <td>-{{ $item->karma }}</td>
                     <td style="text-align:center">
                         <a class="btn btn-danger" href="/deletarMortalisPecattum/{{$item->id}}" onclick="return confirm('Tem certeza que deseja remover?');">Desonrar</a>       
                     </td>

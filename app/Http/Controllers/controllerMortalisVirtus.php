@@ -36,6 +36,11 @@ class controllerMortalisVirtus extends Controller
         $dados = new MortalisVirtu();
         $dados->idMortalis = $request->input('idMortalis');
         $dados->idVirtus = $request->input('idVirtus');
+        $mortalis = Mortali::find($request->input('idMortalis'));
+        $virtus = Virtu::find($request->input('idVirtus'));
+        $mortalis->karma += $virtus->karma;
+        $mortalis->save();
+        $mortalis->julgamento();
         if($dados->save())
             return redirect('/exibirMortalis')->with('success', 'A honra se encontra naqueles que são justos');
         return redirect('/exibirMortalis')->with('danger', 'Erro: Talvez não seja digno de tamanha virtude');
@@ -44,6 +49,11 @@ class controllerMortalisVirtus extends Controller
     public function destroy(string $id)
     {
         $dados = MortalisVirtu::find($id);
+        $mortalis = Mortali::find($dados->idMortalis);
+        $virtus = Virtu::find($dados->idVirtus);
+        $mortalis->karma -= $virtus->karma;
+        $mortalis->save();
+        $mortalis->julgamento();
         if(isset($dados)){
             $dados->delete();
             return redirect('/exibirMortalis')->with('success', 'A ruína está na perda de suas caracteríscas de bondade infantil');

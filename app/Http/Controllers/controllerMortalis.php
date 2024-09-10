@@ -56,10 +56,6 @@ class controllerMortalis extends Controller
   public function destroy(string $id){
     $dados = Mortali::find($id);
     if(isset($dados)){
-        $mortalisVirtus = MortalisVirtu::where('idMortalis', $id)->get();
-        foreach($mortalisVirtus as $item){  
-          $item->delete();  
-        } 
         $dados->delete();
         return redirect('/exibirMortalis')->with('success', 'A morte não é nada para nós, pois, 
         quando existimos, não existe a morte, e quando existe a morte, não existimos mais.');
